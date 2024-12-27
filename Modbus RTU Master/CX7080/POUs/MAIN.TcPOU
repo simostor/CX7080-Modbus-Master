@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
+  <POU Name="MAIN" Id="{af0b7af5-ef8b-494c-9617-585bf35c7d70}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	
+	MB_Master: ModbusRtuMaster_PcCOM;
+	MB_ID: BYTE := 1;
+	Data_Read : ARRAY[1..10] OF INT;
+	Enable_Read: BOOL;
+	Busy: BOOL;
+	Error: BOOL;
+	ErrorId: Tc2_ModbusRTU.MODBUS_ERRORS;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[MB_Master.ReadRegs(
+	UnitID:= MB_ID, 
+	Quantity:= 10, 
+	MBAddr:= 40001, 
+	cbLength:= SIZEOF(Data_Read), 
+	pMemoryAddr:= ADR(Data_Read), 
+	Execute:= Enable_Read, 
+	Timeout:= T#2S, 
+	BUSY=> Busy, 
+	Error=> Error, 
+	ErrorId=> ErrorId, 
+	cbRead=> );]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="44" Count="10" />
+      <LineId Id="42" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

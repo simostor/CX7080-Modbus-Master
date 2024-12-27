@@ -1,0 +1,35 @@
+PROGRAM MAIN
+VAR
+	MB_Master: ModbusRtuMaster_PcCOM;
+	MB_ID: BYTE := 1;
+	Data_Write : ARRAY[0..9] OF INT;
+	Enable_Write: BOOL;
+	Busy_Write: BOOL;
+	Error_Write : BOOL;
+	ErrorId_Write: Tc2_ModbusRTU.MODBUS_ERRORS;
+	Register_Write_Address: WORD := 0;
+	counter: INT;
+END_VAR
+
+// ------------------------------------------------------------
+
+IF NOT Busy_Write THEN
+    Enable_Write := TRUE;
+    counter := counter + 1;
+ELSE
+    Enable_Write := FALSE;
+END_IF;
+
+
+MB_Master.WriteRegs(
+    UnitID:= MB_ID, 
+    Quantity:= 10, 
+    MBAddr:= Register_Write_Address, 
+    cbLength:= SIZEOF(Data_Write), 
+    pMemoryAddr:= ADR(Data_Write), 
+    Execute:= Enable_Write, 
+    Timeout:= T#100ms, 
+    BUSY=> Busy_Write, 
+    Error=> Error_Write, 
+    ErrorId=> ErrorId_Write, 
+    cbRead=>);

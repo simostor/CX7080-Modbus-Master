@@ -1,0 +1,81 @@
+PROGRAM MAIN
+VAR
+	MB_Master: ModbusRtuMaster_PcCOM;
+	MB_ID: BYTE := 1;
+	
+	Data_Read : ARRAY[0..9] OF INT;
+	Enable_Read: BOOL;
+	Busy_Read: BOOL;
+	Error_Read : BOOL;
+	ErrorId_Read: Tc2_ModbusRTU.MODBUS_ERRORS;
+	Register_Read_Address: WORD := 0;
+
+	Data_Write : ARRAY[0..9] OF INT;
+	Enable_Write: BOOL;
+	Busy_Write: BOOL;
+	Error_Write : BOOL;
+	ErrorId_Write: Tc2_ModbusRTU.MODBUS_ERRORS;
+	Register_Write_Address: WORD := 10;
+	
+	state : BOOL;
+	Toggle_Auto : BOOL;
+	
+	timer: TON;              // Timer On Delay function block
+    	clockSignal: BOOL := FALSE; // Output signal that toggles
+    	period: TIME := T#1MS;  // Polling frequency
+	
+	counter1 : INT;
+	counter2 : INT;
+END_VAR
+// ------------------------------------------------------------------
+
+
+
+timer(IN := NOT timer.Q, PT := period);
+IF timer.Q THEN
+    clockSignal := NOT clockSignal;  // Toggle the signal
+END_IF;
+
+
+MB_Master.ReadRegs(
+    UnitID:= MB_ID, 
+    Quantity:= 10, 
+    MBAddr:= Register_Read_Address, 
+    cbLength:= SIZEOF(Data_Read), 
+    pMemoryAddr:= ADR(Data_Read), 
+    Execute:= Enable_Read, 
+    Timeout:= T#100ms, 
+    BUSY=> Busy_Read, 
+    Error=> Error_Read, 
+    ErrorId=> ErrorId_Read, 
+    cbRead=>);
+	
+MB_Master.WriteRegs(
+    UnitID:= MB_ID, 
+    Quantity:= 10, 
+    MBAddr:= Register_Write_Address, 
+    cbLength:= SIZEOF(Data_Write), 
+    pMemoryAddr:= ADR(Data_Write), 
+    Execute:= Enable_Write, 
+    Timeout:= T#100ms, 
+    BUSY=> Busy_Write, 
+    Error=> Error_Write, 
+    ErrorId=> ErrorId_Write, 
+    cbRead=>);
+
+counter1 := counter1 + 1;
+counter2 := counter2 + 2;
+Data_Write[0] := counter1;
+Data_Write[9] := counter2;
+	
+IF Toggle_Auto THEN	
+	IF clockSignal = TRUE THEN;
+		Enable_Read := FALSE;
+		Enable_Write := TRUE;
+		state := FALSE;
+	ELSE
+		Enable_Read := TRUE;
+		Enable_Write := FALSE;
+		state := TRUE;
+	END_IF
+END_IF;

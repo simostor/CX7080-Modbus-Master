@@ -1,0 +1,35 @@
+PROGRAM MAIN
+VAR
+	MB_Master: ModbusRtuMaster_PcCOM;
+	MB_ID: BYTE := 1;
+	Data_Read : ARRAY[0..9] OF INT;
+	Enable_Read: BOOL;
+	Busy_Read: BOOL;
+	Error_Read : BOOL;
+	ErrorId_Read: Tc2_ModbusRTU.MODBUS_ERRORS;
+	Register_Read_Address: WORD := 0;
+	counter: INT;
+END_VAR
+
+// ------------------------------------------------------------
+
+IF NOT Busy_Read THEN
+    Enable_Read := TRUE;
+    counter := counter + 1;
+ELSE
+    Enable_Read := FALSE;
+END_IF;
+
+
+MB_Master.ReadRegs(
+    UnitID:= MB_ID, 
+    Quantity:= 10, 
+    MBAddr:= Register_Read_Address, 
+    cbLength:= SIZEOF(Data_Read), 
+    pMemoryAddr:= ADR(Data_Read), 
+    Execute:= Enable_Read, 
+    Timeout:= T#100ms, 
+    BUSY=> Busy_Read, 
+    Error=> Error_Read, 
+    ErrorId=> ErrorId_Read, 
+    cbRead=>);
