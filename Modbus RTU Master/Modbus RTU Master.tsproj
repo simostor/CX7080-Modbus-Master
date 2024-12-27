@@ -52,7 +52,7 @@
 			</Properties>
 		</DataType>
 	</DataTypes>
-	<Project ProjectGUID="{F4C482B4-7DF4-48D3-B44E-D4C98FD44DFE}" TargetNetId="5.140.122.236.1.1" ShowHideConfigurations="#x6">
+	<Project ProjectGUID="{F4C482B4-7DF4-48D3-B44E-D4C98FD44DFE}" TargetNetId="5.140.122.236.1.1" ShowHideConfigurations="#x3c7">
 		<System>
 			<Tasks>
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
@@ -62,7 +62,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{36BE12AF-C6D7-4B5A-A1CD-808E004E0B4D}" Name="CX7080" PrjFilePath="CX7080\CX7080.plcproj" TmcFilePath="CX7080\CX7080.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{475568BB-9AF1-6E31-0B27-577826FE889A}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="CX7080\CX7080.tmc" TmcHash="{80196BF8-6C5B-18C5-A0F2-9C554C1C8BCB}">
 					<Name>CX7080 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -235,7 +235,7 @@
 			</Project>
 		</Plc>
 		<Io>
-			<Device Id="2" DevType="161" AmsNetId="5.140.122.236.3.1">
+			<Device Id="2" DevType="161" AmsNetId="5.140.122.236.3.1" RemoteName="Device 2 (CX7000)_Devices">
 				<Name>Device 2 (CX7000)</Name>
 				<DevData>3412000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</DevData>
 				<Image Id="2" AddrType="1" ImageType="3" SizeIn="6" SizeOut="20">
@@ -265,134 +265,136 @@
 		<MappingInfo Identifier="{00000000-2001-0850-0020-500840000403}" Id="#x02030010"/>
 		<OwnerA Name="TIPC^CX7080^CX7080 Instance">
 			<OwnerB Name="TIID^Device 4 (COM Port)">
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data1"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data10" Size="8" OffsA="72"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data11" Size="8" OffsA="80"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data12" Size="8" OffsA="88"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data13" Size="8" OffsA="96"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data14" Size="8" OffsA="104"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data15" Size="8" OffsA="112"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data16" Size="8" OffsA="120"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data17" Size="8" OffsA="128"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data18" Size="8" OffsA="136"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data19" Size="8" OffsA="144"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data2" Size="8" OffsA="8"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data20" Size="8" OffsA="152"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data21" Size="8" OffsA="160"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data22" Size="8" OffsA="168"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data23" Size="8" OffsA="176"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data24" Size="8" OffsA="184"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data25" Size="8" OffsA="192"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data26" Size="8" OffsA="200"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data27" Size="8" OffsA="208"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data28" Size="8" OffsA="216"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data29" Size="8" OffsA="224"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data3" Size="8" OffsA="16"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data30" Size="8" OffsA="232"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data31" Size="8" OffsA="240"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data32" Size="8" OffsA="248"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data33" Size="8" OffsA="256"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data34" Size="8" OffsA="264"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data35" Size="8" OffsA="272"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data36" Size="8" OffsA="280"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data37" Size="8" OffsA="288"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data38" Size="8" OffsA="296"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data39" Size="8" OffsA="304"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data4" Size="8" OffsA="24"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data40" Size="8" OffsA="312"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data41" Size="8" OffsA="320"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data42" Size="8" OffsA="328"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data43" Size="8" OffsA="336"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data44" Size="8" OffsA="344"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data45" Size="8" OffsA="352"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data46" Size="8" OffsA="360"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data47" Size="8" OffsA="368"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data48" Size="8" OffsA="376"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data49" Size="8" OffsA="384"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data5" Size="8" OffsA="32"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data50" Size="8" OffsA="392"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data51" Size="8" OffsA="400"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data52" Size="8" OffsA="408"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data53" Size="8" OffsA="416"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data54" Size="8" OffsA="424"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data55" Size="8" OffsA="432"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data56" Size="8" OffsA="440"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data57" Size="8" OffsA="448"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data58" Size="8" OffsA="456"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data59" Size="8" OffsA="464"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data6" Size="8" OffsA="40"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data60" Size="8" OffsA="472"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data61" Size="8" OffsA="480"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data62" Size="8" OffsA="488"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data63" Size="8" OffsA="496"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data64" Size="8" OffsA="504"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data7" Size="8" OffsA="48"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data8" Size="8" OffsA="56"/>
-				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D" VarB="Inputs^Data9" Size="8" OffsA="64"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data1"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data10" Size="8" OffsA="72"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data11" Size="8" OffsA="80"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data12" Size="8" OffsA="88"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data13" Size="8" OffsA="96"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data14" Size="8" OffsA="104"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data15" Size="8" OffsA="112"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data16" Size="8" OffsA="120"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data17" Size="8" OffsA="128"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data18" Size="8" OffsA="136"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data19" Size="8" OffsA="144"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data2" Size="8" OffsA="8"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data20" Size="8" OffsA="152"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data21" Size="8" OffsA="160"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data22" Size="8" OffsA="168"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data23" Size="8" OffsA="176"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data24" Size="8" OffsA="184"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data25" Size="8" OffsA="192"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data26" Size="8" OffsA="200"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data27" Size="8" OffsA="208"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data28" Size="8" OffsA="216"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data29" Size="8" OffsA="224"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data3" Size="8" OffsA="16"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data30" Size="8" OffsA="232"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data31" Size="8" OffsA="240"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data32" Size="8" OffsA="248"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data33" Size="8" OffsA="256"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data34" Size="8" OffsA="264"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data35" Size="8" OffsA="272"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data36" Size="8" OffsA="280"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data37" Size="8" OffsA="288"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data38" Size="8" OffsA="296"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data39" Size="8" OffsA="304"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data4" Size="8" OffsA="24"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data40" Size="8" OffsA="312"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data41" Size="8" OffsA="320"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data42" Size="8" OffsA="328"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data43" Size="8" OffsA="336"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data44" Size="8" OffsA="344"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data45" Size="8" OffsA="352"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data46" Size="8" OffsA="360"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data47" Size="8" OffsA="368"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data48" Size="8" OffsA="376"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data49" Size="8" OffsA="384"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data5" Size="8" OffsA="32"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data50" Size="8" OffsA="392"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data51" Size="8" OffsA="400"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data52" Size="8" OffsA="408"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data53" Size="8" OffsA="416"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data54" Size="8" OffsA="424"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data55" Size="8" OffsA="432"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data56" Size="8" OffsA="440"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data57" Size="8" OffsA="448"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data58" Size="8" OffsA="456"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data59" Size="8" OffsA="464"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data6" Size="8" OffsA="40"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data60" Size="8" OffsA="472"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data61" Size="8" OffsA="480"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data62" Size="8" OffsA="488"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data63" Size="8" OffsA="496"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data64" Size="8" OffsA="504"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data7" Size="8" OffsA="48"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data8" Size="8" OffsA="56"/>
-				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D" VarB="Outputs^Data9" Size="8" OffsA="64"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[0]" VarB="Inputs^Data1"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[10]" VarB="Inputs^Data11"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[11]" VarB="Inputs^Data12"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[12]" VarB="Inputs^Data13"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[13]" VarB="Inputs^Data14"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[14]" VarB="Inputs^Data15"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[15]" VarB="Inputs^Data16"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[16]" VarB="Inputs^Data17"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[17]" VarB="Inputs^Data18"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[18]" VarB="Inputs^Data19"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[19]" VarB="Inputs^Data20"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[1]" VarB="Inputs^Data2"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[20]" VarB="Inputs^Data21"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[21]" VarB="Inputs^Data22"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[22]" VarB="Inputs^Data23"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[23]" VarB="Inputs^Data24"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[24]" VarB="Inputs^Data25"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[25]" VarB="Inputs^Data26"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[26]" VarB="Inputs^Data27"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[27]" VarB="Inputs^Data28"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[28]" VarB="Inputs^Data29"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[29]" VarB="Inputs^Data30"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[2]" VarB="Inputs^Data3"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[30]" VarB="Inputs^Data31"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[31]" VarB="Inputs^Data32"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[32]" VarB="Inputs^Data33"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[33]" VarB="Inputs^Data34"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[34]" VarB="Inputs^Data35"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[35]" VarB="Inputs^Data36"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[36]" VarB="Inputs^Data37"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[37]" VarB="Inputs^Data38"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[38]" VarB="Inputs^Data39"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[39]" VarB="Inputs^Data40"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[3]" VarB="Inputs^Data4"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[40]" VarB="Inputs^Data41"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[41]" VarB="Inputs^Data42"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[42]" VarB="Inputs^Data43"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[43]" VarB="Inputs^Data44"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[44]" VarB="Inputs^Data45"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[45]" VarB="Inputs^Data46"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[46]" VarB="Inputs^Data47"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[47]" VarB="Inputs^Data48"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[48]" VarB="Inputs^Data49"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[49]" VarB="Inputs^Data50"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[4]" VarB="Inputs^Data5"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[50]" VarB="Inputs^Data51"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[51]" VarB="Inputs^Data52"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[52]" VarB="Inputs^Data53"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[53]" VarB="Inputs^Data54"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[54]" VarB="Inputs^Data55"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[55]" VarB="Inputs^Data56"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[56]" VarB="Inputs^Data57"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[57]" VarB="Inputs^Data58"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[58]" VarB="Inputs^Data59"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[59]" VarB="Inputs^Data60"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[5]" VarB="Inputs^Data6"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[60]" VarB="Inputs^Data61"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[61]" VarB="Inputs^Data62"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[62]" VarB="Inputs^Data63"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[63]" VarB="Inputs^Data64"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[6]" VarB="Inputs^Data7"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[7]" VarB="Inputs^Data8"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[8]" VarB="Inputs^Data9"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^D[9]" VarB="Inputs^Data10"/>
+				<Link VarA="PlcTask Inputs^MAIN.MB_Master.InData^SerStatus" VarB="Inputs^Status"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[0]" VarB="Outputs^Data1"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[10]" VarB="Outputs^Data11"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[11]" VarB="Outputs^Data12"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[12]" VarB="Outputs^Data13"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[13]" VarB="Outputs^Data14"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[14]" VarB="Outputs^Data15"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[15]" VarB="Outputs^Data16"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[16]" VarB="Outputs^Data17"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[17]" VarB="Outputs^Data18"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[18]" VarB="Outputs^Data19"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[19]" VarB="Outputs^Data20"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[1]" VarB="Outputs^Data2"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[20]" VarB="Outputs^Data21"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[21]" VarB="Outputs^Data22"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[22]" VarB="Outputs^Data23"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[23]" VarB="Outputs^Data24"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[24]" VarB="Outputs^Data25"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[25]" VarB="Outputs^Data26"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[26]" VarB="Outputs^Data27"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[27]" VarB="Outputs^Data28"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[28]" VarB="Outputs^Data29"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[29]" VarB="Outputs^Data30"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[2]" VarB="Outputs^Data3"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[30]" VarB="Outputs^Data31"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[31]" VarB="Outputs^Data32"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[32]" VarB="Outputs^Data33"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[33]" VarB="Outputs^Data34"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[34]" VarB="Outputs^Data35"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[35]" VarB="Outputs^Data36"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[36]" VarB="Outputs^Data37"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[37]" VarB="Outputs^Data38"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[38]" VarB="Outputs^Data39"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[39]" VarB="Outputs^Data40"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[3]" VarB="Outputs^Data4"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[40]" VarB="Outputs^Data41"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[41]" VarB="Outputs^Data42"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[42]" VarB="Outputs^Data43"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[43]" VarB="Outputs^Data44"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[44]" VarB="Outputs^Data45"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[45]" VarB="Outputs^Data46"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[46]" VarB="Outputs^Data47"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[47]" VarB="Outputs^Data48"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[48]" VarB="Outputs^Data49"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[49]" VarB="Outputs^Data50"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[4]" VarB="Outputs^Data5"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[50]" VarB="Outputs^Data51"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[51]" VarB="Outputs^Data52"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[52]" VarB="Outputs^Data53"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[53]" VarB="Outputs^Data54"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[54]" VarB="Outputs^Data55"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[55]" VarB="Outputs^Data56"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[56]" VarB="Outputs^Data57"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[57]" VarB="Outputs^Data58"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[58]" VarB="Outputs^Data59"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[59]" VarB="Outputs^Data60"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[5]" VarB="Outputs^Data6"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[60]" VarB="Outputs^Data61"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[61]" VarB="Outputs^Data62"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[62]" VarB="Outputs^Data63"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[63]" VarB="Outputs^Data64"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[6]" VarB="Outputs^Data7"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[7]" VarB="Outputs^Data8"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[8]" VarB="Outputs^Data9"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^D[9]" VarB="Outputs^Data10"/>
+				<Link VarA="PlcTask Outputs^MAIN.MB_Master.OutData^SerCtrl" VarB="Outputs^Ctrl"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>
