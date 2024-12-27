@@ -21,7 +21,7 @@ VAR
 	Register_Write_Address: WORD := 10;
 	
 	state : BOOL;
-	Toggle_Auto : BOOL;
+	Toggle_Auto : BOOL := TRUE;
 	
 	timer: TON;              // Timer On Delay function block
     	clockSignal: BOOL := FALSE; // Output signal that toggles
@@ -81,9 +81,5 @@ IF Toggle_Auto THEN
 	END_IF
 END_IF;]]></ST>
     </Implementation>
-    <LineIds Name="MAIN">
-      <LineId Id="95" Count="46" />
-      <LineId Id="42" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

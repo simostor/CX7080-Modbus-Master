@@ -62,7 +62,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{36BE12AF-C6D7-4B5A-A1CD-808E004E0B4D}" Name="CX7080" PrjFilePath="CX7080\CX7080.plcproj" TmcFilePath="CX7080\CX7080.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="CX7080\CX7080.tmc" TmcHash="{80196BF8-6C5B-18C5-A0F2-9C554C1C8BCB}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="CX7080\CX7080.tmc" TmcHash="{8505DF11-0D67-497C-4575-C27A0D7460F7}">
 					<Name>CX7080 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
