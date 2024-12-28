@@ -55,14 +55,14 @@
 	<Project ProjectGUID="{F4C482B4-7DF4-48D3-B44E-D4C98FD44DFE}" TargetNetId="5.140.122.236.1.1" ShowHideConfigurations="#x3c7">
 		<System>
 			<Tasks>
-				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
+				<Task Id="3" Priority="20" CycleTime="10000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
 				</Task>
 			</Tasks>
 		</System>
 		<Plc>
 			<Project GUID="{36BE12AF-C6D7-4B5A-A1CD-808E004E0B4D}" Name="CX7080" PrjFilePath="CX7080\CX7080.plcproj" TmcFilePath="CX7080\CX7080.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="CX7080\CX7080.tmc" TmcHash="{CC91103E-43E2-3E2A-30C0-0C8A3FBCAA22}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="CX7080\CX7080.tmc" TmcHash="{38BC9DB2-B987-7EA7-16BF-D63B65180A9A}">
 					<Name>CX7080 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -225,7 +225,7 @@
 								<OTCID>#x02010030</OTCID>
 							</ManualConfig>
 							<Priority>20</Priority>
-							<CycleTime>10000000</CycleTime>
+							<CycleTime>1000000</CycleTime>
 						</Context>
 					</Contexts>
 					<TaskPouOids>
