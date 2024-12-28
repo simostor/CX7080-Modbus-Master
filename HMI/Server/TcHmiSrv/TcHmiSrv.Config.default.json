@@ -2508,6 +2508,108 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.Joint_Control.Base_Current_Angle": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::Joint_Control::Base_Current_Angle",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/INT"
+                    },
+                    {
+                        "comment": "[deg]\tIntermediate base angle. Calculated in this script with ramp function. Value written to Modbus slave"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.Joint_Control.Elbow_Current_Angle": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::Joint_Control::Elbow_Current_Angle",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/INT"
+                    },
+                    {
+                        "comment": "[deg]\tIntermediate elbow angle. Calculated in this script with ramp function. Value written to Modbus slave"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.Joint_Control.HMI_Base_Angle_Setpoint": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::Joint_Control::HMI_Base_Angle_Setpoint",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/INT"
+                    },
+                    {
+                        "comment": "[deg] \tFinal base angle setpoint from HMI"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.Joint_Control.HMI_Elbow_Angle_Setpoint": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::Joint_Control::HMI_Elbow_Angle_Setpoint",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/INT"
+                    },
+                    {
+                        "comment": "[deg]\tFinal elbow angle setpoint from HMI"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.Joint_Control.HMI_Shoulder_Angle_Setpoint": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::Joint_Control::HMI_Shoulder_Angle_Setpoint",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/INT"
+                    },
+                    {
+                        "comment": "[deg]\tFinal shoulder angle setpont from HMI"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.Joint_Control.Shoulder_Current_Angle": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::Joint_Control::Shoulder_Current_Angle",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/INT"
+                    },
+                    {
+                        "comment": "[deg]\tIntermediate shoulder angle. Calculated in this script with ramp function. Value written to Modbus slave"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
         "PLC1.MAIN.Data_Read.0": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -3507,6 +3609,12 @@
                 "LocalizeText": 3,
                 "Login": 3,
                 "Logout": 3,
+                "PLC1.Joint_Control.Base_Current_Angle": 3,
+                "PLC1.Joint_Control.Elbow_Current_Angle": 3,
+                "PLC1.Joint_Control.HMI_Base_Angle_Setpoint": 3,
+                "PLC1.Joint_Control.HMI_Elbow_Angle_Setpoint": 3,
+                "PLC1.Joint_Control.HMI_Shoulder_Angle_Setpoint": 3,
+                "PLC1.Joint_Control.Shoulder_Current_Angle": 3,
                 "PLC1.MAIN.Data_Read.0": 3,
                 "PLC1.MAIN.Data_Read.1": 3,
                 "PLC1.MAIN.Data_Read.2": 3,
