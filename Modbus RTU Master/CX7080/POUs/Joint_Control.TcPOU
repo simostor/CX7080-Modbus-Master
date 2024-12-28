@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
+  <POU Name="Joint_Control" Id="{f003c753-2df9-4c5f-b746-2f71622d955b}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Joint_Control
+VAR
+	HMI_Base_Angle_Setpoint : INT; 		// [deg] 	Final base angle setpoint from HMI
+	HMI_Shoulder_Angle_Setpoint : INT; 	// [deg]	Final shoulder angle setpont from HMI
+	HMI_Elbow_Angle_Setpoint : INT; 	// [deg]	Final elbow angle setpoint from HMI
+	Base_Current_Angle : INT; 			// [deg]	Intermediate base angle. Calculated in this script with ramp function. Value written to Modbus slave
+	Shoulder_Current_Angle : INT; 		// [deg]	Intermediate shoulder angle. Calculated in this script with ramp function. Value written to Modbus slave
+	Elbow_Current_Angle : INT; 			// [deg]	Intermediate elbow angle. Calculated in this script with ramp function. Value written to Modbus slave
+	HMI_Joint_Ramp_Speed : INT := 10; 	// [deg/s]	Used to set joint speed. Value from HMI
+	Ramp_Base : FB_CTRL_RAMP_GENERATOR;
+	Ramp_Shoulder : FB_CTRL_RAMP_GENERATOR;
+	Ramp_Elbow : FB_CTRL_RAMP_GENERATOR;
+	
+	
+	// Kladd
+	counter : INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Ramp_Base.stParams.fVeloNeg := HMI_Joint_Ramp_Speed;
+Ramp_Base.stParams.fVeloPos := HMI_Joint_Ramp_Speed;
+Ramp_Shoulder.stParams.fVeloNeg := HMI_Joint_Ramp_Speed;
+Ramp_Shoulder.stParams.fVeloPos := HMI_Joint_Ramp_Speed;
+Ramp_Elbow.stParams.fVeloNeg := HMI_Joint_Ramp_Speed;
+Ramp_Elbow.stParams.fVeloPos := HMI_Joint_Ramp_Speed;
+
+Ramp_Base.bEnable := TRUE;
+Ramp_Shoulder.bEnable := TRUE;
+Ramp_Elbow.bEnable := TRUE;
+
+Ramp_Base.fStart := HMI_Base_Angle_Setpoint;
+Ramp_Shoulder.fStart := HMI_Shoulder_Angle_Setpoint;
+Ramp_Elbow.fStart := HMI_Elbow_Angle_Setpoint;
+
+Ramp_Base.fTarget := HMI_Base_Angle_Setpoint;
+Ramp_Shoulder.fTarget := HMI_Shoulder_Angle_Setpoint;
+Ramp_Elbow.fTarget := HMI_Elbow_Angle_Setpoint;
+
+MAIN.Data_Write[0] := Ramp_Base.fVeloOut;
+MAIN.Data_Write[1] := Ramp_Shoulder.fVeloOut;
+MAIN.Data_Write[2] := Ramp_Elbow.fVeloOut;
+
+counter := counter + 1;]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
