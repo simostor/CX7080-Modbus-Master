@@ -23,19 +23,22 @@ VAR
 	state : BOOL;
 	Toggle_Auto : BOOL := TRUE;
 	
-	timer: TON;              // Timer On Delay function block
-    	clockSignal: BOOL := FALSE; // Output signal that toggles
-    	period: TIME := T#1MS;  // Polling frequency
+	timer: TON;              	// Timer On Delay function block
+    clockSignal: BOOL := FALSE; // Output signal that toggles
+    period: TIME := T#1MS;  	// Polling frequency
 	
 	counter1 : INT;
 	counter2 : INT;
 END_VAR
+
+
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[timer(IN := NOT timer.Q, PT := period);
 IF timer.Q THEN
     clockSignal := NOT clockSignal;  // Toggle the signal
 END_IF;
+
 
 
 MB_Master.ReadRegs(
@@ -64,10 +67,10 @@ MB_Master.WriteRegs(
     ErrorId=> ErrorId_Write, 
     cbRead=>);
 
-counter1 := counter1 + 1;
-counter2 := counter2 + 2;
-Data_Write[0] := counter1;
-Data_Write[9] := counter2;
+
+Data_Write[0] := Joint_Control.Base_Current_Angle;
+Data_Write[1] := Joint_Control.Shoulder_Current_Angle;
+Data_Write[2] := Joint_Control.Elbow_Current_Angle;
 	
 IF Toggle_Auto THEN	
 	IF clockSignal = TRUE THEN;

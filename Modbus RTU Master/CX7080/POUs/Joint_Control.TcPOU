@@ -13,23 +13,55 @@ VAR
 	Ramp_Base : FB_CTRL_RAMP_GENERATOR;
 	Ramp_Shoulder : FB_CTRL_RAMP_GENERATOR;
 	Ramp_Elbow : FB_CTRL_RAMP_GENERATOR;
-	
-	
-	// Kladd
-	counter : INT;
+	Ramp_Cycle_Time : TIME := T#10ms;
+	Ramp_Base_Parameters : ST_CTRL_RAMP_GENERATOR_PARAMS;
+	Ramp_Shoulder_Parameters : ST_CTRL_RAMP_GENERATOR_PARAMS;
+	Ramp_Elbow_Parameters : ST_CTRL_RAMP_GENERATOR_PARAMS;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[Ramp_Base.stParams.fVeloNeg := HMI_Joint_Ramp_Speed;
-Ramp_Base.stParams.fVeloPos := HMI_Joint_Ramp_Speed;
-Ramp_Shoulder.stParams.fVeloNeg := HMI_Joint_Ramp_Speed;
-Ramp_Shoulder.stParams.fVeloPos := HMI_Joint_Ramp_Speed;
-Ramp_Elbow.stParams.fVeloNeg := HMI_Joint_Ramp_Speed;
-Ramp_Elbow.stParams.fVeloPos := HMI_Joint_Ramp_Speed;
+      <ST><![CDATA[IF HMI_Base_Angle_Setpoint > 180 THEN
+	HMI_Base_Angle_Setpoint := 180;
+ELSIF HMI_Base_Angle_Setpoint < 0 THEN
+	HMI_Base_Angle_Setpoint := 0;
+END_IF
 
+IF HMI_Shoulder_Angle_Setpoint > 180 THEN
+	HMI_Shoulder_Angle_Setpoint := 180;
+ELSIF HMI_Shoulder_Angle_Setpoint < 0 THEN
+	HMI_Shoulder_Angle_Setpoint := 0;
+END_IF
+
+IF HMI_Elbow_Angle_Setpoint > 180 THEN
+	HMI_Elbow_Angle_Setpoint := 180;
+ELSIF HMI_Elbow_Angle_Setpoint < 0 THEN
+	HMI_Elbow_Angle_Setpoint := 0;
+END_IF
+
+
+Ramp_Base_Parameters.fVeloNeg := HMI_Joint_Ramp_Speed;
+Ramp_Base_Parameters.fVeloPos := HMI_Joint_Ramp_Speed;
+Ramp_Base_Parameters.tCtrlCycleTime := Ramp_Cycle_Time;
+Ramp_Base_Parameters.tTaskCycleTime := Ramp_Cycle_Time;
 Ramp_Base.bEnable := TRUE;
+Ramp_Base(stParams := Ramp_Base_Parameters);
+
+
+Ramp_Shoulder_Parameters.fVeloNeg := HMI_Joint_Ramp_Speed;
+Ramp_Shoulder_Parameters.fVeloPos := HMI_Joint_Ramp_Speed;
+Ramp_Shoulder_Parameters.tCtrlCycleTime := Ramp_Cycle_Time;
+Ramp_Shoulder_Parameters.tTaskCycleTime := Ramp_Cycle_Time;
 Ramp_Shoulder.bEnable := TRUE;
+Ramp_Shoulder(stParams := Ramp_Shoulder_Parameters);
+
+
+Ramp_Elbow_Parameters.fVeloNeg := HMI_Joint_Ramp_Speed;
+Ramp_Elbow_Parameters.fVeloPos := HMI_Joint_Ramp_Speed;
+Ramp_Elbow_Parameters.tCtrlCycleTime := Ramp_Cycle_Time;
+Ramp_Elbow_Parameters.tTaskCycleTime := Ramp_Cycle_Time;
 Ramp_Elbow.bEnable := TRUE;
+Ramp_Elbow(stParams := Ramp_Elbow_Parameters);
+
 
 Ramp_Base.fStart := HMI_Base_Angle_Setpoint;
 Ramp_Shoulder.fStart := HMI_Shoulder_Angle_Setpoint;
@@ -39,11 +71,10 @@ Ramp_Base.fTarget := HMI_Base_Angle_Setpoint;
 Ramp_Shoulder.fTarget := HMI_Shoulder_Angle_Setpoint;
 Ramp_Elbow.fTarget := HMI_Elbow_Angle_Setpoint;
 
-MAIN.Data_Write[0] := Ramp_Base.fVeloOut;
-MAIN.Data_Write[1] := Ramp_Shoulder.fVeloOut;
-MAIN.Data_Write[2] := Ramp_Elbow.fVeloOut;
-
-counter := counter + 1;]]></ST>
+Base_Current_Angle := LREAL_TO_INT(Ramp_Base.fOut);
+Shoulder_Current_Angle := LREAL_TO_INT(Ramp_Shoulder.fOut);
+Elbow_Current_Angle := LREAL_TO_INT(Ramp_Elbow.fOut);
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
