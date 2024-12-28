@@ -27,8 +27,7 @@ VAR
     clockSignal: BOOL := FALSE; // Output signal that toggles
     period: TIME := T#1MS;  	// Polling frequency
 	
-	counter1 : INT;
-	counter2 : INT;
+	counter : INT;
 END_VAR
 
 
@@ -82,7 +81,12 @@ IF Toggle_Auto THEN
 		Enable_Write := FALSE;
 		state := TRUE;
 	END_IF
-END_IF;]]></ST>
+END_IF;
+
+
+
+// Testing
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
