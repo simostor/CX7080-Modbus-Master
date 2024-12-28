@@ -11,15 +11,15 @@ Har implementert følgende:
 - Modbus RTU read og write registers program
 - Versjonskontroll/Git
 - Har opprettet HMI prosjekt for å vise register verdier
-
+- Spesifisere hva dette programmet skal kunne gjøre
+- Sjekke om det finnes allerede eksisterende blokker som har funksjonaliteten jeg ønsker
+- Spesifiser hvordan HMI skal se ut
 
 Videre oppgaver:
 - Prøve å gå tilbake til en eldre versjon ved hjelp av Git. Lag eget prosjekt for dette
 - Implementere bibliotek for testing av funksjonsblokker/TcUnit
 - Lage eget bibliotek for egne implementerte funksjonsblokker som er testet med TcUnit
-- Spesifisere hva dette programmet skal kunne gjøre
-	- Sjekke om det finnes allerede eksisterende blokker som har funksjonaliteten jeg ønsker
-- Spesifiser hvordan HMI skal se ut
+
 
 
 
