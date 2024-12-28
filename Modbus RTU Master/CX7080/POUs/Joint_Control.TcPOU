@@ -13,7 +13,7 @@ VAR
 	Ramp_Base : FB_CTRL_RAMP_GENERATOR;
 	Ramp_Shoulder : FB_CTRL_RAMP_GENERATOR;
 	Ramp_Elbow : FB_CTRL_RAMP_GENERATOR;
-	Ramp_Cycle_Time : TIME := T#10ms;
+	Ramp_Cycle_Time : TIME := T#1ms;
 	Ramp_Base_Parameters : ST_CTRL_RAMP_GENERATOR_PARAMS;
 	Ramp_Shoulder_Parameters : ST_CTRL_RAMP_GENERATOR_PARAMS;
 	Ramp_Elbow_Parameters : ST_CTRL_RAMP_GENERATOR_PARAMS;
