@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
+  <POU Name="Notes_Program_funksjonalitet" Id="{1f3f8fb8-d3ad-4946-b04b-c54269f40412}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Notes_Program_funksjonalitet
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(*
+- Skal kunne manuelt "jogge roboten dit man vil ved hjelp knapper på skjermen"
+- Skal kunne direkte skrive inn ønsket ledd-vinkler
+- For å oppnå jevn bevegelse, skal det benyttes "ramp" funksjon
+- Skal kunne lagre koordinater som roboten skal bevege seg mellom
+- Skal kunne justere hastigheten som roboten beveger seg mellom 10 og 100% hastighet
+*)]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

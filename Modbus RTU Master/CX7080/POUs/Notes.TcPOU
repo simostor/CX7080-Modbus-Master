@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
+  <POU Name="Notes" Id="{d0b44e49-92c0-4d27-89dd-1d1622b8c00c}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Notes
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(*
+Har implementert følgende:
+- Modbus RTU read og write registers program
+- Versjonskontroll/Git
+- Har opprettet HMI prosjekt for å vise register verdier
+
+
+Videre oppgaver:
+- Prøve å gå tilbake til en eldre versjon ved hjelp av Git. Lag eget prosjekt for dette
+- Implementere bibliotek for testing av funksjonsblokker/TcUnit
+- Lage eget bibliotek for egne implementerte funksjonsblokker som er testet med TcUnit
+- Spesifisere hva dette programmet skal kunne gjøre
+	- Sjekke om det finnes allerede eksisterende blokker som har funksjonaliteten jeg ønsker
+- Spesifiser hvordan HMI skal se ut
+
+
+
+*)]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
