@@ -62,7 +62,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{36BE12AF-C6D7-4B5A-A1CD-808E004E0B4D}" Name="CX7080" PrjFilePath="CX7080\CX7080.plcproj" TmcFilePath="CX7080\CX7080.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="CX7080\CX7080.tmc" TmcHash="{38BC9DB2-B987-7EA7-16BF-D63B65180A9A}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="CX7080\CX7080.tmc" TmcHash="{544253E8-0F32-9BF3-35B4-44053AFAFABA}">
 					<Name>CX7080 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -238,7 +238,7 @@
 			<Device Id="2" DevType="161" AmsNetId="5.140.122.236.3.1" RemoteName="Device 2 (CX7000)_Devices">
 				<Name>Device 2 (CX7000)</Name>
 				<DevData>3412000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</DevData>
-				<Image Id="2" AddrType="1" ImageType="3" SizeIn="6" SizeOut="20">
+				<Image Id="2" AddrType="1" ImageType="3" SizeIn="2" SizeOut="10">
 					<Name>Image</Name>
 				</Image>
 			</Device>
