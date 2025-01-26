@@ -8,8 +8,6 @@ END_VAR
     <Implementation>
       <ST><![CDATA[(*
 - Skal kunne manuelt "jogge roboten dit man vil ved hjelp knapper på skjermen"
-- Skal kunne direkte skrive inn ønsket ledd-vinkler
-- For å oppnå jevn bevegelse, skal det benyttes "ramp" funksjon
 - Skal kunne lagre koordinater som roboten skal bevege seg mellom
 - Skal kunne justere hastigheten som roboten beveger seg mellom 10 og 100% hastighet
 - Skal bruke "scope" funksjonen for å plotte ønskede vinkler mot nåværende vinkler
