@@ -17,7 +17,9 @@ VAR_OUTPUT
 END_VAR
 VAR
 	currentIndex : INT;
-	savedBasePositions : ARRAY OF INT [0..9];
+	savedBasePositions : ARRAY OF INT [0..9] := {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+	savedShoulderPositions : ARRAY OF INT [0..9] := {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+	savedElbowPositions  ARRAY OF INT [0..9] := {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
 END_VAR
 ]]></Declaration>
     <Implementation>
