@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
+  <POU Name="FB_savePositions" Id="{3f9c5992-6c21-4d73-a6df-987da302f836}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_savePositions
+VAR_INPUT
+	baseAngle : INT;
+	shoulderAngle : INT;
+	elbowAngle : INT;
+	desiredPosIndex : INT;
+	isTargetPosReached : BOOL;
+END_VAR
+VAR_OUTPUT
+	targetBaseAngle : INT;
+	targetShoulderAngle : INT;
+	targetElbowAngle : INT;
+	savedPosCount : INT;
+END_VAR
+VAR
+	currentIndex : INT;
+	savedBasePositions : ARRAY OF INT [0..9];
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
