@@ -3,23 +3,23 @@
   <POU Name="FB_savePositions" Id="{3f9c5992-6c21-4d73-a6df-987da302f836}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_savePositions
 VAR_INPUT
-	baseAngle : INT;
-	shoulderAngle : INT;
-	elbowAngle : INT;
-	desiredPosIndex : INT;
-	isTargetPosReached : BOOL;
+	inputBaseAngle : INT;			// Input baseAngle to be saved to array
+	inpitShoulderAngle : INT;		// Input shoulderAngle to be saved to array
+	inputElbowAngle : INT;			// Input elbowAngle to be saved to array
+	desiredPosIndex : INT;		// Index used to select saved output angles
+	isTargetPosReached : BOOL;	// Will increment desiredPosIndex when true
 END_VAR
 VAR_OUTPUT
-	targetBaseAngle : INT;
-	targetShoulderAngle : INT;
-	targetElbowAngle : INT;
-	savedPosCount : INT;
+	targetBaseAngle : INT;		// baseAngle to be written to servo
+	targetShoulderAngle : INT;	// shoulderAngle to be written to servo
+	targetElbowAngle : INT;		// elbowAngle to be written to servo
+	savedPosCount : INT;		// Number of recorden joint positions
 END_VAR
 VAR
-	currentIndex : INT;
-	savedBasePositions : ARRAY OF INT [0..9] := {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
-	savedShoulderPositions : ARRAY OF INT [0..9] := {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
-	savedElbowPositions  ARRAY OF INT [0..9] := {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+	currentIndex : INT;			// Index reflecting current saved angles to be written to servos
+	savedBasePositions : ARRAY OF INT [0..9] := {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};		// Saved base positions to be accessed by desiredPosIndex
+	savedShoulderPositions : ARRAY OF INT [0..9] := {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};	// Saved shoulder positions to be accessed by desiredPosIndex
+	savedElbowPositions  ARRAY OF INT [0..9] := {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};		// Saved elbow positions to be accessed by desiredPosIndex
 END_VAR
 ]]></Declaration>
     <Implementation>
