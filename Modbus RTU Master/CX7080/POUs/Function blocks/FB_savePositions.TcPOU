@@ -3,11 +3,17 @@
   <POU Name="FB_savePositions" Id="{3f9c5992-6c21-4d73-a6df-987da302f836}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_savePositions
 VAR_INPUT
-	inputBaseAngle : INT;			// Input baseAngle to be saved to array
-	inpitShoulderAngle : INT;		// Input shoulderAngle to be saved to array
-	inputElbowAngle : INT;			// Input elbowAngle to be saved to array
+	inputBaseAngle : INT;		// Input baseAngle to be saved to array
+	inpitShoulderAngle : INT;	// Input shoulderAngle to be saved to array
+	inputElbowAngle : INT;		// Input elbowAngle to be saved to array
 	desiredPosIndex : INT;		// Index used to select saved output angles
 	isTargetPosReached : BOOL;	// Will increment desiredPosIndex when true
+	recordPosMode : BOOL;		// When true, you will be able to jog robot and record the joint angles
+	recordPos : BOOL;			// If recordPositionMode is true, and this variable turns true, the current joint configuration will be saved
+	autoStart : BOOL;			// If true, robot will iterate through the recorded joint angles
+	autoStop : BOOL;			// If true, auto sequence will be stopped
+	toHomePos : BOOL;			// If true, robot will move to home position 
+	reset : BOOL;				// After stopped, this will reset all recorded joint angles
 END_VAR
 VAR_OUTPUT
 	targetBaseAngle : INT;		// baseAngle to be written to servo
@@ -20,6 +26,10 @@ VAR
 	savedBasePositions : ARRAY OF INT [0..9] := {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};		// Saved base positions to be accessed by desiredPosIndex
 	savedShoulderPositions : ARRAY OF INT [0..9] := {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};	// Saved shoulder positions to be accessed by desiredPosIndex
 	savedElbowPositions  ARRAY OF INT [0..9] := {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};		// Saved elbow positions to be accessed by desiredPosIndex
+	error : ARRAY OF STRING[0..1] := {"No positions recorded, Auto Start not possible", "Joint angle to be saved is out of range"}; // Predefined error codes
+	baseHomePosAngle : INT;		// Hardcoded home position for base joint
+	shoulderHomePos : INT;		// Hardcoded home position for shoulder joint
+	elbowHomePos : INT;			// Hardcoded home position for elbow joint
 END_VAR
 ]]></Declaration>
     <Implementation>
